@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yp#@!aa+k@7c_5453hwda!)2inyb8q6vi6i0r9q%nwi14h6zgb'
+SSECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-yp#@!aa+k@7c_5453hwda!)2inyb8q6vi6i0r9q%nwi14h6zgb')
+DEBUG = 'RENDER' not in os.environ
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -44,21 +44,19 @@ ALLOWED_HOSTS = [
     'http://44.227.217.144'
     'https://web3-health.onrender.com'
 ]
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 CSRF_TRUSTED_ORIGINS = [
-  'https://web3-health.onrender.com'
-  'localhost',  # For local development
-    '127.0.0.1',
-    '0.0.0.0',
-    '100.20.92.101',
-    '44.225.181.72',
-    '44.227.217.144',
     'http://0.0.0.0',
     'http://100.20.92.101',
     'http://127.0.0.1',
-    'http://44.225.181.72',
-    'http://44.227.217.144'
+    'https://44.225.181.72',
+    'https://44.227.217.144',
+    'https://web3-health.onrender.com',
 ]
+
 
 
 # Application definition
