@@ -39,6 +39,16 @@ ALLOWED_HOSTS = [
     '44.227.217.144',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+  'https://web3-health.onrender.com'
+  'localhost',  # For local development
+    '127.0.0.1',
+    '0.0.0.0',
+    '100.20.92.101',
+    '44.225.181.72',
+    '44.227.217.144',
+]
+
 
 # Application definition
 
@@ -87,6 +97,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 WSGI_APPLICATION = 'healthchain.wsgi.application'
+# Security settings for HTTPS
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+X_FRAME_OPTIONS = 'DENY'
 
 
 # Database
