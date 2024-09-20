@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-yp#@!aa+k@7c_5453hwda!)2inyb8q6vi6i0r9q%nwi14h6zgb
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-yp#@!aa+k@7c_5453hwda!)2inyb8q6vi6i0r9q%nwi14h6zgb')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False) 
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'web3-health.onrender.com',  # Add your Render domain here
