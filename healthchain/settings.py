@@ -42,6 +42,7 @@ ALLOWED_HOSTS = [
     'http://127.0.0.1',
     'http://44.225.181.72',
     'http://44.227.217.144'
+    'https://web3-health.onrender.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
