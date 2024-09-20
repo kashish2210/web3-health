@@ -18,6 +18,8 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = 'django-insecure-yp#@!aa+k@7c_5453hwda!)2inyb8q6vi6i0r9q%nwi14h6zgb'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -129,6 +131,7 @@ X_FRAME_OPTIONS = 'DENY'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
+
     'default': dj_database_url.config(
         default='postgresql://kashish:WlU7YspWt3KAvNzpLgEAOES8i3pi3dzf@dpg-crmsualumphs739k9p6g-a:5432/kashish',
         conn_max_age=600
