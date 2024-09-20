@@ -25,10 +25,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-yp#@!aa+k@7c_5453hwda!)2inyb8q6vi6i0r9q%nwi14h6zgb'
 
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-yp#@!aa+k@7c_5453hwda!)2inyb8q6vi6i0r9q%nwi14h6zgb')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False) 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'web3-health.onrender.com',  # Add your Render domain here
+    'localhost',  # For local development
+    '127.0.0.1',
+    '0.0.0.0',
+]
 
 
 # Application definition
@@ -127,6 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 
@@ -148,3 +155,9 @@ LOGOUT_REDIRECT_URL = 'login'
 
 # Email backend configuration (optional)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Port binding for Render.com (use the environment variable 'PORT')
+PORT = os.environ.get('PORT', '8000')
+
+# TensorFlow configuration (use CPU if no GPU is detected)
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress TensorFlow GPU warnings

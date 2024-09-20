@@ -16,7 +16,7 @@ from django.http import StreamingHttpResponse, JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import google.generativeai as genai
 
-apiKey = "your_api_key"
+apiKey = "AIzaSyA2i4KZU4YzGty_GN0-obC07e_ufWPlxdg"
 
 DATA_FILE_PATH = 'emotion_data.json'
 # Custom User Model
