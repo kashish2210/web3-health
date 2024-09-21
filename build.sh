@@ -12,4 +12,4 @@ python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
 python manage.py migrate
-gunicorn healthchain.asgi:application -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --log-level=debug
+gunicorn healthchain.asgi:application -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000 --check-config
