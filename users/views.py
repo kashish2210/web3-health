@@ -16,6 +16,9 @@ from django.http import StreamingHttpResponse, JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import google.generativeai as genai
 
+gpu_options = tf.compat.v1.GPUOptions(allow_growth=True)
+config = tf.compat.v1.ConfigProto(gpu_options=gpu_options)
+sess = tf.compat.v1.Session(config=config)
 apiKey = "AIzaSyA2i4KZU4YzGty_GN0-obC07e_ufWPlxdg"
 
 DATA_FILE_PATH = 'emotion_data.json'

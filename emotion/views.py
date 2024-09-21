@@ -9,6 +9,9 @@ import json
 from django.template import loader
 import os
 import plotly.graph_objects as go  # Ensure this import is included
+gpu_options = tf.compat.v1.GPUOptions(allow_growth=True)
+config = tf.compat.v1.ConfigProto(gpu_options=gpu_options)
+sess = tf.compat.v1.Session(config=config)
 
 DATA_FILE_PATH = 'emotion_data.json'
 
