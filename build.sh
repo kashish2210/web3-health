@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # Exit on error
-@echo off
-echo Building project...
 set -o errexit
 
-kashish\Scripts\activate
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate
+
 # Modify this line as needed for your package manager (pip, poetry, etc.)
 pip install -r requirements.txt
 
