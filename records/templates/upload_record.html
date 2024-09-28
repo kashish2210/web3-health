@@ -12,7 +12,7 @@
             background-repeat: no-repeat;
             margin: 0;
             font-size: 16px;
-            background-color: #4e23cf
+            background-color: #89dc8a
         }
         .container {
             padding: 20px;
@@ -46,7 +46,7 @@
             border-radius:8px;
             display:flex;
             display:grid;
-            background-color: #4e23cf
+            background-color: #89dc8a
         }
         button { padding: 10px; background-color: #28a745; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
         button:hover { background-color: #218838; }
@@ -66,6 +66,7 @@
         <li class="right"><a href="{% url 'detect_emotion' %}">vid</a></li>
         <li class="right"><a href="{% url 'dashboard' %}?reset=true" class="btn btn-warning">Reset Graphs</a></li>
         <li class="right"><a href="{% url 'upload' %}">File summarize</a></li>
+        <li><a id="wallet-address" href="#">Wallet: Not connected</a></li>
     </ul>
     <div class="container" >
         <h2>Upload Patient Record</h2>
@@ -75,5 +76,6 @@
             <button type="submit">Upload</button>
         </form>
     </div>
+    <script src="{% static 'web3.js' %}"></script>
 </body>
 </html>

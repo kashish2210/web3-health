@@ -64,6 +64,7 @@
         <li class="right"><a href="{% url 'detect_emotion' %}">vid</a></li>
         <li class="right"><a href="{% url 'dashboard' %}?reset=true" class="btn btn-warning">Reset Graphs</a></li>
         <li class="right"><a href="{% url 'upload' %}">File summarize</a></li>
+        <li><a id="wallet-address" href="#">Wallet: Not connected</a></li>
     </ul>
     <div class="maincontainer">
         <div class="container">
@@ -92,6 +93,7 @@
         </table>
     </div>
     </div>
+    <script src="{% static 'web3.js' %}"></script>
 
 </body>
 </html>

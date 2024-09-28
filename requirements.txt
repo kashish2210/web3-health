@@ -17,3 +17,5 @@ dj-database-url
 whitenoise[brotli]
 gunicorn
 uvicorn
+ipfshttpclient
+web3

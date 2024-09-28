@@ -85,6 +85,7 @@
     <li class="right"><a href="{% url 'detect_emotion' %}">vid</a></li>
     <li class="right"><a href="{% url 'dashboard' %}?reset=true" class="btn btn-warning">Reset Graphs</a></li>
     <li class="right"><a href="{% url 'upload' %}">File summarize</a></li>
+    <li><a id="wallet-address" href="#">Wallet: Not connected</a></li>
 </ul>
         <h1>Upload File</h1>
         <form id="uploadForm" method="post" enctype="multipart/form-data">
@@ -124,5 +125,6 @@
             }
         });
     </script>
+    <script src="{% static 'web3.js' %}"></script>
 </body>
 </html>
